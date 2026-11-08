@@ -3,13 +3,19 @@ export const site = {
   name: "Aviv Assayag",
   first: "Aviv",
   last: "Assayag",
-  handle: "aviv",
+  handle: "assayag",
   status: "Open to work",
-  lede: "[One sentence: what you build and who you build it for.]",
-  cvHref: "#",
-  aboutText: "[Two or three short paragraphs: who you are, what you care about building, what you want next.]",
-  aboutTimeline: "Timeline: [role / study / milestone, with dates]",
-  contactLine: "[One line: what you’re looking for and how fast you reply.]",
+  lede: "Backend Software Engineer building high-scale distributed systems: microservices, DevOps pipelines, and AI powered tooling.",
+  cvHref: "/AvivCV.pdf",
+  aboutText: `I'm a backend software engineer with 4 years of expereince building high-scale C4I systems, microservices, and automated DevOps pipelines.
+              I started at Rafael, then moved to the Israeli Navy, where I grew from software engineer to tech leader in an R&D team.
+              I like simplifying complex systems, whether that means cutting infrastructure costs, removing technical debt,
+              or finding thousand of redundent I/O operations.
+              I'm also exploring how AI can make software smarter. Including leading a research into on-premises LLM deployment.
+              Looking forward for a place to keep growing myself, and share my abilities to watch the project grows with me.`,
+  aboutTimeline: "2022 Rafael, software engineer | 2023 Israeli Navy, software engineer | 2024-2026 Israeli Navy, tech leader",
+  aboutChips: ["Java", "Kafka", "Kubernetes", "TypeScript", "Docker"],
+  contactLine: "Open to backend and distributed-systems roles. Send me an email and I'll get back to you quickly.",
   builtWith: "Astro",
 };
 
@@ -21,20 +27,46 @@ export const nav = [
   { label: "Contact", href: "#contact" },
 ];
 
-export const projects = [1, 2, 3].map(() => ({
-  title: "[Case study title]",
-  summary: "[Problem and result in one line.]",
-  tags: ["[tech]", "[tech]"],
-  href: "#",
-}));
+export const projects = [{
+  title: "Assayag.dev portfolio builder for personals",
+  summary: "An Astro project that gives developers a template for their career and personal life, so they can advertise themeselves.",
+  tags: ["[Astro]", "[TypeScript]", "[NPM]", "[Node.js]"],
+  href: "https://github.com/Assaviv",
+  image: "assayag.dev"
+},{
+  title: "BypassLogic: premium code that isn't in the build",
+  summary: "A Gradle plugin that strips annotated methods from compiled bytecode, so paid features can't be unlocked on customer machines.",
+  tags: ["[Java]", "[Gradle]", "[ASM]", "[Bytecode]", "[Open Source]"],
+  href: "https://github.com/Assaviv/BypassLogic",
+  image: "BypassLogic"
+}, {
+  title: "SaveApp: memories becomes into insights",
+  summary: "A social media that analyzes user's memories, collections and saved posts and directs them into data and insights.",
+  tags: ["[Microservices]", "Aspire .[NET]", "[Angular]", "[LLM]", "[In Progress]"],
+  href: "https://github.com/Assaviv/CollectionsProject",
+  image: "SaveApp"
+}];
 
-export const posts = [1, 2, 3].map(() => ({
-  date: "YYYY-MM-DD",
-  title: "[Post title]",
+export const posts = [{
+  date: "2026-10-22",
+  title: "🚘 What does Tesla has to do with my open-source project?",
   read: "5 min read",
-  href: "#",
-}));
+  href: "https://lnkd.in/p/drFVaQ4X",
+}];
 
 export const trips = ["Featured trip photo", "Photo", "Photo", "Photo", "Photo", "Photo"];
 
-export const socials = ["GitHub", "LinkedIn", "Email", "RSS"].map((label) => ({ label, href: "#" }));
+export const socials = [{
+    label: "Github",
+    href: "https://github.com/Assaviv"
+  }, {
+    label: "LinkedIn",
+    href: "https://www.linkedin.com/in/aviv-assayag"
+  }, {
+    label: "Email",
+    href: "mailTo:2004aviv@gmail.com"
+  }, {
+    label: "RSS",
+    href: "#",
+  }
+]
