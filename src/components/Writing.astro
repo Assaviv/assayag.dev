@@ -1,0 +1,11 @@
+---
+import { posts } from "../data/site";
+---
+<section id="writing"><div class="wrap">
+  <div class="head"><h2>Writing</h2><a class="note" href="#">All posts and tags</a></div>
+  <div class="posts">
+    {posts.map((p) => (
+      <a class="post" href={p.href}><time>{p.date}</time><h3>{p.title}</h3><small>{p.read}</small></a>
+    ))}
+  </div>
+</div></section>

@@ -1,0 +1,17 @@
+---
+import { projects } from "../data/site";
+---
+<section id="work"><div class="wrap">
+  <div class="head"><h2>Work</h2><p class="note">3 deep case studies beat 10 thin cards</p></div>
+  <div class="grid3">
+    {projects.map((p) => (
+      <a class="case" href={p.href}>
+        <div class="ph">Cover image or diagram</div>
+        <h3>{p.title}</h3>
+        <p>{p.summary}</p>
+        <div class="tags">{p.tags.map((t) => <span>{t}</span>)}</div>
+      </a>
+    ))}
+  </div>
+  <div class="ph" style="margin-top:1rem;height:110px">Open-source strip: GitHub contribution graph + “Now building” list</div>
+</div></section>

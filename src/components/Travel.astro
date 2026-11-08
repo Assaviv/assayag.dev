@@ -1,0 +1,8 @@
+---
+import { trips } from "../data/site";
+---
+<section id="travel"><div class="wrap">
+  <div class="head"><h2>Travel</h2><a class="note" href="#">All trips</a></div>
+  <div class="travel">{trips.map((t) => <div class="ph">{t}</div>)}</div>
+  <div class="ph map">Map of visited places</div>
+</div></section>
