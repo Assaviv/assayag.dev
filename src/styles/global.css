@@ -39,7 +39,7 @@ kbd{font:400 .75rem var(--mono);border:1px solid var(--line);border-radius:5px;p
 .portrait .ring{position:absolute;left:50%;top:16%;width:170%;aspect-ratio:1;transform:translateX(-50%);border-radius:50%;background:radial-gradient(circle at 50% 40%,color-mix(in srgb,var(--accent) 55%,transparent),transparent 70%);border:2px solid var(--accent)}
 .portrait svg,.portrait img{position:absolute;inset:0;width:100%;height:100%;object-fit:contain;object-position:bottom}
 .portrait svg{color:var(--mute)}
-@media(max-width:720px){.portrait{height:clamp(240px,40vh,340px);top:calc(112px + env(safe-area-inset-top,0px) + 2.5rem + 1.6rem)}.lede{max-width:58%}}
+@media(max-width:720px){.portrait{position:absolute;top:calc(clamp(2.5rem,7vw,5.5rem) + 1.9rem);right:0;width:clamp(112px,34vw,156px);height:auto;aspect-ratio:1;overflow:visible;background:transparent;border:0}.portrait::before,.portrait::after{content:"";position:absolute;inset:0;border:2px solid var(--accent);border-radius:50%;pointer-events:none}.portrait::before{clip-path:inset(0 0 50%);z-index:-1}.portrait::after{clip-path:inset(50% 0 0);z-index:2}.portrait .ring{display:none}.portrait img{inset:auto;left:0;bottom:0;width:100%;height:135%;object-fit:cover;object-position:center 0%;border-radius:0 0 50% 50%}.status,h1{max-width:calc(100% - clamp(128px,38vw,172px))}h1{font-size:clamp(2.4rem,10vw,4.2rem)}.lede{max-width:none}}
 .status{display:inline-flex;align-items:center;gap:.5rem;font:400 .85rem var(--mono);color:var(--mute);border:1px solid var(--line);border-radius:99px;padding:.3rem .8rem}
 .status i{width:.55rem;height:.55rem;border-radius:50%;background:var(--hot)}
 h1{font:800 clamp(3.4rem,14vw,10.5rem)/.86 var(--display);letter-spacing:-.045em;margin:1.2rem 0 1.5rem;position:relative;z-index:0}
