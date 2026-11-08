@@ -1,0 +1,15 @@
+---
+import { site, nav } from "../data/site";
+---
+<header>
+  <div class="wrap bar">
+    <a class="logo" href="#top">{site.handle}<span>.</span>dev</a>
+    <nav id="nav" aria-label="Sections">
+      {nav.map((n) => <a href={n.href}>{n.label}</a>)}
+    </nav>
+    <div class="tools">
+      <button class="btn sm" id="searchBtn" type="button" aria-label="Search the site">Search <kbd class="hide-sm">Ctrl K</kbd></button>
+      <button class="btn sm" id="themeBtn" type="button" aria-label="Change colour theme">Theme: <span id="themeName">night</span></button>
+    </div>
+  </div>
+</header>

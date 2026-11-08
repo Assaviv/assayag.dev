@@ -1,0 +1,33 @@
+---
+import full from "../assets/aviv-full.webp";
+import { site } from "../data/site";
+// Braces are special in Astro templates, so the code window is built as an HTML string.
+const code = [
+  `<span class="k">const</span> aviv = {`,
+  `  role: <span class="s">"[your role]"</span>,`,
+  `  stack: [<span class="s">"[tech]"</span>, <span class="s">"[tech]"</span>, <span class="s">"[tech]"</span>],`,
+  `  basedIn: <span class="s">"[city]"</span>,`,
+  `  status: <span class="s">"open to work"</span><span class="caret"></span>`,
+  `};`,
+].map((l) => `<span class="l">${l}</span>`).join("");
+---
+<div class="wrap">
+  <div class="hero">
+    <div class="portrait" id="portrait">
+      <div class="ring" aria-hidden="true"></div>
+      <img src={full.src} width={full.width} height={full.height} alt={site.name} />
+    </div>
+    <span class="status"><i></i>{site.status}</span>
+    <h1>{site.first}<br /><em>{site.last}</em></h1>
+    <p class="lede">{site.lede}</p>
+    <div class="cta">
+      <a class="btn main" href="#work">See my work</a>
+      <a class="btn" href="#contact">Get in touch</a>
+      <a class="btn" href={site.cvHref}>Download CV (PDF)</a>
+    </div>
+    <div class="editor" aria-hidden="true">
+      <div class="tab"><b></b><b></b><b></b>&nbsp;aviv.ts</div>
+      <pre set:html={code}></pre>
+    </div>
+  </div>
+</div>

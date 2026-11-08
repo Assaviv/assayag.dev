@@ -1,0 +1,16 @@
+---
+import portrait from "../assets/aviv-portrait.webp";
+import { site } from "../data/site";
+---
+<section id="about"><div class="wrap">
+  <div class="head"><h2>About</h2></div>
+  <div class="about">
+    <img class="avatar" src={portrait.src} width={portrait.width} height={portrait.height} alt={`Close-up portrait of ${site.name}`} loading="lazy" />
+    <div>
+      <p>{site.aboutText}</p>
+      <div class="lines" aria-hidden="true"><i style="width:92%"></i><i style="width:86%"></i><i style="width:64%"></i></div>
+      <div class="chips">{[1, 2, 3, 4, 5].map(() => <span class="ph">[tech]</span>)}</div>
+      <p class="note" style="margin-top:1.4rem">{site.aboutTimeline}</p>
+    </div>
+  </div>
+</div></section>
