@@ -1,0 +1,9 @@
+{
+  "name": "avivdev",
+  "compatibility_date": "2026-11-08",
+  "assets": { "directory": "./dist" },
+  "routes": [
+    { "pattern": "assayag.dev", "custom_domain": true },
+    { "pattern": "www.assayag.dev", "custom_domain": true }
+  ]
+}
