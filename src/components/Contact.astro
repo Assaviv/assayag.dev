@@ -1,0 +1,18 @@
+---
+import { site, socials } from "../data/site";
+---
+<section id="contact"><div class="wrap">
+  <div class="head"><h2>Contact</h2></div>
+  <div class="contact">
+    <div>
+      <p style="color:var(--mute);max-width:36ch;margin-top:0">{site.contactLine}</p>
+      <div class="socials">{socials.map((s) => <a class="btn sm" href={s.href}>{s.label}</a>)}</div>
+    </div>
+    <form onsubmit="return false">
+      <label>Name<input type="text" autocomplete="name" /></label>
+      <label>Email<input type="email" autocomplete="email" /></label>
+      <label>Message<textarea rows="4"></textarea></label>
+      <button class="btn main" type="button">Send message</button>
+    </form>
+  </div>
+</div></section>
