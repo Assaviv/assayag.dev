@@ -42,7 +42,7 @@ export const projects = [{
 }, {
   title: "SaveApp: memories becomes into insights",
   summary: "A social media that analyzes user's memories, collections and saved posts and directs them into data and insights.",
-  tags: ["[Microservices]", "Aspire .[NET]", "[Angular]", "[LLM]", "[In Progress]"],
+  tags: ["[Microservices]", "[Aspire .NET]", "[Angular]", "[LLM]", "[In Progress]"],
   href: "https://github.com/Assaviv/CollectionsProject",
   image: "SaveApp"
 }];
