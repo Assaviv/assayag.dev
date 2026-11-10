@@ -8,7 +8,6 @@ import { site } from "../data/site";
     <img class="avatar" src={portrait.src} width={portrait.width} height={portrait.height} alt={`Close-up portrait of ${site.name}`} loading="lazy" />
     <div>
       <p>{site.aboutText}</p>
-      <div class="lines" aria-hidden="true"><i style="width:92%"></i><i style="width:86%"></i><i style="width:64%"></i></div>
       <div class="chips">{site.aboutChips.map((chip) => <span class="ph">[{chip}]</span>)}</div>
       <p class="note" style="margin-top:1.4rem">{site.aboutTimeline}</p>
     </div>
