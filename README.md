@@ -6,11 +6,11 @@ Personal portfolio for Aviv Assayag, built with Astro. The site is a static page
 
 - Profile hero with CV download and contact links.
 - Work cards and a GitHub contribution graph for `Assaviv`. The graph shows the latest 30 days in a 3-row by 10-column grid and follows the active site theme.
-- Writing, About, and Contact sections.
+- Writing, About, and a Contact form that delivers messages to `2004aviv@gmail.com` through Resend on Cloudflare Pages.
 - In-page search, opened with the Search button or `Ctrl K` / `⌘ K`.
 - Theme switcher: Night, Daylight, Ember, and Ocean.
 
-The Travel component is present in the source but is currently not rendered on the homepage. The Contact form is a visual placeholder and does not submit messages.
+The Travel component is present in the source but is currently not rendered on the homepage.
 
 ## Run locally
 
@@ -36,10 +36,15 @@ The graph requests public contribution data from the GitHub Contributions API wh
 
 For local builds, copy `.env.example` to `.env` and set the token there. For Cloudflare Pages, add `GITHUB_TOKEN` as a secret environment variable for the build. Do not commit `.env` or paste the token into source files. If the token is missing, invalid, or lacks the required scope, the graph falls back to public contribution data.
 
+## Contact form email
+
+The Contact form posts to a Cloudflare Pages Function at `/api/contact`, which sends the message through [Resend](https://resend.com/) to `2004aviv@gmail.com`. To enable delivery, create a Resend API key and verify a sending domain, then add `RESEND_API_KEY` and `RESEND_FROM_EMAIL` to the Cloudflare Pages project's environment variables. Set `RESEND_FROM_EMAIL` to a sender address on the verified domain (for example, `Portfolio <contact@your-verified-domain.com>`). The variable names are listed in `.env.example` for reference, but the values must be configured as server-side secrets in Cloudflare Pages; Astro's local development server does not run the Function. Never commit real credentials.
+
 ## Edit the portfolio
 
 - Profile text, navigation, project cards, writing entries, travel labels, and social links: `src/data/site.ts`.
 - Page sections and reusable UI: `src/components/`.
+- Contact form UI: `src/components/Contact.astro`; its Cloudflare Pages email handler: `functions/api/contact.ts`.
 - Page composition: `src/pages/index.astro`.
 - Shared layout and document metadata: `src/layouts/Base.astro`.
 - Global layout, typography, theme variables, and shared styles: `src/styles/global.css`.
