@@ -1,5 +1,6 @@
 ---
 import { projects } from "../data/site";
+import GitHubContributions from "./GitHubContributions.astro";
 ---
 <section id="work"><div class="wrap">
   <div class="head"><h2>Work</h2><p class="note">Things I've built, and the problems behind them.</p></div>
@@ -13,5 +14,5 @@ import { projects } from "../data/site";
       </a>
     ))}
   </div>
-  <div class="ph" style="margin-top:1rem;height:110px">Open-source strip: GitHub contribution graph + “Now building” list</div>
+  <GitHubContributions />
 </div></section>
