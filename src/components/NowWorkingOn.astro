@@ -1,0 +1,47 @@
+---
+import { projects } from "../data/site";
+
+const currentProjects = projects.filter((project) =>
+  project.tags.some((tag) => tag.toLowerCase() === "[in progress]"),
+);
+---
+
+{currentProjects.length > 0 && (
+  <section class="now-working" aria-labelledby="now-working-title">
+    <div class="head">
+      <h2 id="now-working-title">Now working on…</h2>
+      <p class="note">A look at what’s on my desk right now.</p>
+    </div>
+    <div class="now-list">
+      {currentProjects.map((project) => (
+        <article class="now-card">
+          <div class="now-copy">
+            <span class="now-status"><i aria-hidden="true"></i>In progress</span>
+            <h3>{project.title}</h3>
+            <p>{project.summary}</p>
+            <div class="tags">
+              {project.tags.filter((tag) => tag.toLowerCase() !== "[in progress]").map((tag) => <span>{tag}</span>)}
+            </div>
+            <a class="btn sm" href={project.href} target="_blank" rel="noreferrer">View project <span aria-hidden="true">↗</span></a>
+          </div>
+          <img class="now-preview" src={`/projects/${project.image}.webp`} alt={`${project.title} preview`} loading="lazy" />
+        </article>
+      ))}
+    </div>
+  </section>
+)}
+
+<style>
+  .now-working{margin-top:clamp(2rem,4vw,3rem)}
+  .now-working .head{margin-bottom:1rem}
+  .now-list{display:grid;gap:1rem}
+  .now-card{display:grid;grid-template-columns:minmax(0,1fr) minmax(220px,.8fr);gap:clamp(1.25rem,4vw,3rem);align-items:center;padding:clamp(1rem,3vw,1.5rem);border:1px solid var(--line);border-radius:14px;background:var(--surface)}
+  .now-copy{display:flex;flex-direction:column;align-items:flex-start;gap:.75rem}
+  .now-status{display:inline-flex;align-items:center;gap:.45rem;color:var(--hot);font:400 .75rem var(--mono);text-transform:uppercase;letter-spacing:.04em}
+  .now-status i{width:.5rem;height:.5rem;border-radius:50%;background:var(--hot);box-shadow:0 0 0 3px color-mix(in srgb,var(--hot) 16%,transparent)}
+  .now-card h3{margin:0;font:800 clamp(1.4rem,3vw,2rem)/1.1 var(--display);letter-spacing:-.025em}
+  .now-card p{margin:0;color:var(--mute);max-width:56ch}
+  .now-card .tags{margin:0 0 .25rem}
+  .now-preview{display:block;width:100%;aspect-ratio:16/10;object-fit:contain;padding:.5rem;border:1px solid var(--line);border-radius:10px;background:var(--bg)}
+  @media(max-width:640px){.now-card{grid-template-columns:1fr}.now-preview{grid-row:1}.now-copy{gap:.65rem}}
+</style>
