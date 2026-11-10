@@ -8,11 +8,47 @@ import { site, socials } from "../data/site";
       <p style="color:var(--mute);max-width:36ch;margin-top:0">{site.contactLine}</p>
       <div class="socials">{socials.map((s) => <a class="btn sm" href={s.href}>{s.label}</a>)}</div>
     </div>
-    <form onsubmit="return false">
-      <label>Name<input type="text" autocomplete="name" /></label>
-      <label>Email<input type="email" autocomplete="email" /></label>
-      <label>Message<textarea rows="4"></textarea></label>
-      <button class="btn main" type="button">Send message</button>
+    <form id="contact-form">
+      <label>Name<input name="name" type="text" autocomplete="name" maxlength="120" required /></label>
+      <label>Email<input name="email" type="email" autocomplete="email" maxlength="254" required /></label>
+      <label>Message<textarea name="message" rows="4" maxlength="5000" required></textarea></label>
+      <div class="contact-trap" aria-hidden="true"><label>Leave this field empty<input name="company" tabindex="-1" autocomplete="off" /></label></div>
+      <button class="btn main" type="submit">Send message</button>
+      <p id="contact-status" role="status" aria-live="polite"></p>
     </form>
   </div>
 </div></section>
+
+<script>
+  const form = document.querySelector<HTMLFormElement>("#contact-form");
+  const status = document.querySelector<HTMLElement>("#contact-status");
+
+  form?.addEventListener("submit", async (event) => {
+    event.preventDefault();
+    if (!form.reportValidity() || !status) return;
+
+    const button = form.querySelector<HTMLButtonElement>('button[type="submit"]');
+    if (button) button.disabled = true;
+    status.textContent = "Sending…";
+
+    try {
+      const response = await fetch("/api/contact", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify(Object.fromEntries(new FormData(form))),
+      });
+
+      if (!response.ok) throw new Error("Message could not be sent");
+      form.reset();
+      status.textContent = "Thanks, your message has been sent.";
+    } catch {
+      status.textContent = "Sorry, your message could not be sent. Please try again later.";
+    } finally {
+      if (button) button.disabled = false;
+    }
+  });
+</script>
+
+<style>
+  .contact-trap { position:absolute; width:1px; height:1px; overflow:hidden; clip-path:inset(50%); }
+</style>
