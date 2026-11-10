@@ -38,13 +38,13 @@ For local builds, copy `.env.example` to `.env` and set the token there. For Clo
 
 ## Contact form email
 
-The Contact form posts to a Cloudflare Pages Function at `/api/contact`, which sends the message through [Resend](https://resend.com/) to `2004aviv@gmail.com`. To enable delivery, create a Resend API key and verify a sending domain, then add `RESEND_API_KEY` and `RESEND_FROM_EMAIL` to the Cloudflare Pages project's environment variables. Set `RESEND_FROM_EMAIL` to a sender address on the verified domain (for example, `Portfolio <contact@your-verified-domain.com>`). The variable names are listed in `.env.example` for reference, but the values must be configured as server-side secrets in Cloudflare Pages; Astro's local development server does not run the Function. Never commit real credentials.
+The Contact form posts to `/api/contact`, which the Cloudflare Worker routes to `functions/api/contact.ts` and sends through [Resend](https://resend.com/). To enable delivery, create a Resend API key and verify a sending domain, then configure `RESEND_API_KEY` and `RESEND_FROM_EMAIL` as Worker secrets. Set `RESEND_FROM_EMAIL` to a sender address on the verified domain (for example, `Portfolio <contact@your-verified-domain.com>`). The variable names are listed in `.env.example` for reference; values must be set in the Cloudflare Worker environment and are never bundled into the site. Astro's local development server does not run this Worker.
 
 ## Edit the portfolio
 
 - Profile text, navigation, project cards, writing entries, travel labels, and social links: `src/data/site.ts`.
 - Page sections and reusable UI: `src/components/`.
-- Contact form UI: `src/components/Contact.astro`; its Cloudflare Pages email handler: `functions/api/contact.ts`.
+- Contact form UI: `src/components/Contact.astro`; its email handler and Worker entry point: `functions/api/contact.ts` and `functions/worker.ts`.
 - Page composition: `src/pages/index.astro`.
 - Shared layout and document metadata: `src/layouts/Base.astro`.
 - Global layout, typography, theme variables, and shared styles: `src/styles/global.css`.
@@ -54,7 +54,7 @@ The Contact form posts to a Cloudflare Pages Function at `/api/contact`, which s
 
 ## Deploy
 
-The project is configured for static output and can be deployed to Cloudflare Pages:
+The project builds a static site and deploys it as Cloudflare Worker static assets, with the Worker handling `/api/*` routes:
 
 - Build command: `npm run build`
 - Build output directory: `dist`
