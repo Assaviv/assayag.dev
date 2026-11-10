@@ -1,7 +1,12 @@
 {
   "name": "avivdev",
+  "main": "./functions/worker.ts",
   "compatibility_date": "2026-11-08",
-  "assets": { "directory": "./dist" },
+  "assets": {
+    "directory": "./dist",
+    "binding": "ASSETS",
+    "run_worker_first": ["/api/*"]
+  },
   "previews": {},
   "routes": [
     { "pattern": "assayag.dev", "custom_domain": true },
