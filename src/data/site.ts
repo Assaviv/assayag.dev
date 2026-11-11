@@ -28,19 +28,19 @@ export const nav = [
 ];
 
 export const projects = [{
-  title: "Assayag.dev portfolio builder for personals",
+  title: "Assayag.dev portfolio builder for personals 👤",
   summary: "An Astro project that gives developers a template for their career and personal life, so they can advertise themeselves.",
   tags: ["[Astro]", "[TypeScript]", "[NPM]", "[Node.js]"],
   href: "https://github.com/Assaviv",
   image: "assayag.dev"
 },{
-  title: "BypassLogic: premium code that isn't in the build",
+  title: "BypassLogic: premium code that isn't in the build 🕵️",
   summary: "A Gradle plugin that strips annotated methods from compiled bytecode, so paid features can't be unlocked on customer machines.",
   tags: ["[Java]", "[Gradle]", "[ASM]", "[Bytecode]", "[Open Source]"],
   href: "https://github.com/Assaviv/BypassLogic",
   image: "BypassLogic"
 }, {
-  title: "SaveApp: memories becomes into insights",
+  title: "SaveApp: memories becomes insights 💡",
   summary: "A social media that analyzes user's memories, collections and saved posts and directs them into data and insights.",
   tags: ["[Microservices]", "[Aspire .NET]", "[Angular]", "[LLM]", "[In Progress]"],
   href: "https://github.com/Assaviv/CollectionsProject",
