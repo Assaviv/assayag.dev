@@ -7,12 +7,12 @@ export const site = {
   status: "Open to work",
   lede: "Backend Software Engineer building high-scale distributed systems: microservices, DevOps pipelines, and AI powered tooling.",
   cvHref: "/AvivCV.pdf",
-  aboutText: `I'm a backend software engineer with 4 years of expereince building high-scale C4I systems, microservices, and automated DevOps pipelines.
+  aboutText: `I'm a backend software engineer with 4 years of experience building high-scale C4I systems, microservices, and automated DevOps pipelines.
               I started at Rafael, then moved to the Israeli Navy, where I grew from software engineer to tech leader in an R&D team.
               I like simplifying complex systems, whether that means cutting infrastructure costs, removing technical debt,
-              or finding thousand of redundent I/O operations.
+              or finding thousand of redundant I/O operations.
               I'm also exploring how AI can make software smarter. Including leading a research into on-premises LLM deployment.
-              Looking forward for a place to keep growing myself, and share my abilities to watch the project grows with me.`,
+              Looking forward to finding a place where I can keep growing, and share my abilities to watch the project grows with me.`,
   aboutTimeline: "2022 Rafael, software engineer | 2023 Israeli Navy, software engineer | 2024-2026 Israeli Navy, tech leader",
   aboutChips: ["Java", "Kafka", "Kubernetes", "TypeScript", "Docker"],
   contactLine: "Open to backend and distributed-systems roles. Send me an email and I'll get back to you quickly.",
@@ -29,7 +29,7 @@ export const nav = [
 
 export const projects = [{
   title: "Assayag.dev portfolio builder for personals 👤",
-  summary: "An Astro project that gives developers a template for their career and personal life, so they can advertise themeselves.",
+  summary: "An Astro project that gives developers a template for their career and personal life, so they can advertise themselves.",
   tags: ["[Astro]", "[TypeScript]", "[NPM]", "[Node.js]"],
   href: "https://github.com/Assaviv",
   image: "assayag.dev"
