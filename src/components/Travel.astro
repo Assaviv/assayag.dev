@@ -15,7 +15,7 @@
   const key = import.meta.env.PUBLIC_CARTO_KEY;
   if (!key) console.warn("PUBLIC_CARTO_KEY is missing: using OpenStreetMap tiles instead. Check your .env and restart the dev server.");
   const tiles = key
-    ? `https://basemaps.cartocdn.com/rastertiles/voyager/{z}/{x}/{y}{r}.png?key=${key}`
+    ? `https://basemaps.cartocdn.com/rastertiles/dark_all/{z}/{x}/{y}{r}.png?key=${key}`
     : "https://tile.openstreetmap.org/{z}/{x}/{y}.png";
   L.tileLayer(tiles, {
     attribution:
