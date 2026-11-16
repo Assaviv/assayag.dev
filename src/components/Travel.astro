@@ -11,7 +11,7 @@
   import { places, routes, singles, bothColor, uncoloured } from "../data/travel";
 
   // set a starting view first: Leaflet needs one before any vector layer (lines, countries) is added
-  const map = L.map("travel-map", { worldCopyJump: true }).setView([30, 55], 3);
+    const map = L.map("travel-map", { worldCopyJump: true, maxZoom: 5 }).setView([30, 55], 3);
   const key = import.meta.env.PUBLIC_CARTO_KEY;
   if (!key) console.warn("PUBLIC_CARTO_KEY is missing: using OpenStreetMap tiles instead. Check your .env and restart the dev server.");
   const tiles = key
@@ -24,6 +24,10 @@
     maxNativeZoom: 18,
     maxZoom: 20,
   }).addTo(map);
+
+  map.getPane("tilePane")!.style.filter = !key ? "invert(1) hue-rotate(180deg) brightness(.9)" : "";
+  map.setMinZoom(map.getZoom());
+  map.setMaxBounds(map.getBounds().pad(0.3));
 
   // country -> colour (route colour, or bothColor if it's in several routes)
   const colorOf: Record<string, string> = {};
