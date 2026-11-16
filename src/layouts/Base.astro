@@ -4,6 +4,7 @@ import Header from "../components/Header.astro";
 import Footer from "../components/Footer.astro";
 import SearchDialog from "../components/SearchDialog.astro";
 import { site } from "../data/site";
+import portrait from "../assets/aviv-portrait.webp"
 interface Props { title?: string; description?: string }
 const { title = `${site.name} – Portfolio`, description = site.lede } = Astro.props;
 ---
@@ -14,6 +15,7 @@ const { title = `${site.name} – Portfolio`, description = site.lede } = Astro.
     <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
     <meta name="description" content={description} />
     <title>{title}</title>
+    <link rel="icon" type="image/png" href={portrait.src}>
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,500;12..96,800&family=JetBrains+Mono:wght@400;500&family=Instrument+Sans:wght@400;500&display=swap" rel="stylesheet" />
