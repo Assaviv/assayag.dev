@@ -64,7 +64,7 @@ export const socials = [{
     href: "https://www.linkedin.com/in/aviv-assayag"
   }, {
     label: "Email",
-    href: "mailTo:2004aviv@gmail.com"
+    href: "mailto:aviv@assayag.dev"
   }, {
     label: "RSS",
     href: "#",
