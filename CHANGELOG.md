@@ -4,6 +4,7 @@ Notable changes to the portfolio are recorded here. Entries are maintained by co
 
 ## Unreleased
 
+- Replaced the personal Gmail address in the Email link and README with `aviv@assayag.dev`, the address the Contact form delivers to.
 - Listed the Resend contact form environment variables in `.env.example` and documented their server-side configuration.
 - Routed the Contact API through the Cloudflare Worker entry point so `/api/contact` works with the configured Worker static assets deployment.
 - Rewrote the README to document the current portfolio, local development, GitHub contribution graph configuration, and Cloudflare Pages deployment.

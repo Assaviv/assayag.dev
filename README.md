@@ -6,7 +6,7 @@ Personal portfolio for Aviv Assayag, built with Astro. The site is a static page
 
 - Profile hero with CV download and contact links.
 - Work cards and a GitHub contribution graph for `Assaviv`. The graph shows the latest 30 days in a 3-row by 10-column grid and follows the active site theme.
-- Writing, About, and a Contact form that delivers messages to `2004aviv@gmail.com` through Resend on Cloudflare Pages.
+- Writing, About, and a Contact form that delivers messages to `aviv@assayag.dev` through Resend on Cloudflare Pages.
 - In-page search, opened with the Search button or `Ctrl K` / `⌘ K`.
 - Theme switcher: Night, Daylight, Ember, and Ocean.
 
